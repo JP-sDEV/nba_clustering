@@ -1,6 +1,5 @@
 import os
 import json
-from flask_cors import CORS
 from flask import Flask, request, jsonify
 from db_queries import StatQueries
 from models import LogModel, RandomForestModel, SVMModel
@@ -8,11 +7,9 @@ from models import LogModel, RandomForestModel, SVMModel
 # INIT APP
 app = Flask(__name__)
 dirname = os.path.dirname(__file__)
-# cors = CORS(app, resources={"": {"origins": "*"}})
+
 
 @app.route('/')
-# @cross_origin()
-# @app.route('/<year>/<team_name>/', methods=["GET"])
 @app.route('/<year>/<team_name>/<predict>/', methods=["GET"])
 def get_team_year(team_name=None, year=None, predict=0):
 
@@ -35,7 +32,6 @@ def get_team_year(team_name=None, year=None, predict=0):
 
 
 @ app.route("/<team>/", methods=["GET"])
-# @cross_origin()
 def get_years_of_team(team):
     db_conn = StatQueries()
     years = db_conn.get_years_of_team(team)
@@ -43,7 +39,6 @@ def get_years_of_team(team):
 
 
 @ app.route("/<year>/avg/", methods=["GET"])
-# @cross_origin()
 def get_year_avg(year):
     db_conn = StatQueries()
     avg = db_conn.get_year_stat_avgs(year)
