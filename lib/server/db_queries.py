@@ -92,7 +92,21 @@ class StatQueries():
 
         return out_obj
 
+    def test1(self):
+        """
+            get all the teams from year X
+        """
+        cur = self.conn.cursor()
+        # sql_query = ("SELECT Team FROM STATS WHERE (Year = ?)")
+        sql_query = ("SELECT DISTINCT(Team) FROM STATS")
+        query_res = cur.execute(sql_query)
+        return_list = list(i[0] for i in (cur.fetchall()))
+
+        return({"years": return_list})
+        cur.close()
+
 
 # test = StatQueries()
-# out = test.tt()
-# out = test.get_single_team("Toronto Raptors", 2000)
+# # out = test.test1()
+# out = test.test1()
+# print(len(out['years']))
