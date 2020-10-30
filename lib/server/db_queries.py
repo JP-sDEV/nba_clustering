@@ -5,7 +5,7 @@ import helper_functions
 
 
 dirname = os.path.dirname(__file__)
-db_dir = os.path.join(dirname, "../stats.db")
+db_dir = os.path.join(dirname, "./stats.db")
 
 
 class StatQueries():

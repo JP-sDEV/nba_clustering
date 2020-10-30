@@ -1,16 +1,19 @@
 import os
 import json
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 from db_queries import StatQueries
 from models import LogModel, RandomForestModel, SVMModel
 
 # INIT APP
-app = Flask(__name__)
+app = Flask(__name__, static_folder='client/build', static_url_path='')
 dirname = os.path.dirname(__file__)
+cors = CORS(app)
 
 
 @app.route('/')
 @app.route('/<year>/<team_name>/<predict>/', methods=["GET"])
+@cross_origin()
 def get_team_year(team_name=None, year=None, predict=0):
 
     if team_name == None and year == None:
@@ -32,6 +35,7 @@ def get_team_year(team_name=None, year=None, predict=0):
 
 
 @ app.route("/<team>/", methods=["GET"])
+@cross_origin()
 def get_years_of_team(team):
     db_conn = StatQueries()
     years = db_conn.get_years_of_team(team)
@@ -39,6 +43,7 @@ def get_years_of_team(team):
 
 
 @ app.route("/<year>/avg/", methods=["GET"])
+@cross_origin()
 def get_year_avg(year):
     db_conn = StatQueries()
     avg = db_conn.get_year_stat_avgs(year)
@@ -46,4 +51,4 @@ def get_year_avg(year):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
