@@ -6,7 +6,7 @@ from db_queries import StatQueries
 from models import LogModel, RandomForestModel, SVMModel
 
 # INIT APP
-app = Flask(__name__, static_folder='client/build', static_url_path='/')
+app = Flask(__name__, static_url_path='')
 dirname = os.path.dirname(__file__)
 cors = CORS(app)
 
