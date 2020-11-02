@@ -10,9 +10,10 @@ function Form({ getTeamStats }) {
         teamSelected: false
     })
     const [years, setYears] = useState([])
+    const baseURL = "https://nba-clustering.herokuapp.com"
 
     useEffect(() => {
-        axios.get(`/${teamYear.team}/`).then((res) => [...years, setYears(res.data.years)])
+        axios.get(`${baseURL}/${teamYear.team}/`).then((res) => [...years, setYears(res.data.years)])
         setTeamYear({ ...teamYear, year: null })
     }, [teamYear.team])
 

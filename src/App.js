@@ -21,11 +21,13 @@ function App() {
     data: null
   });
 
+  const baseURL = "https://nba-clustering.herokuapp.com"
+
   // METHODS
   const getTeamStats = async (year, team) => {
-    const req = await axios.get(`/${year}/${team}/0/`)
-    const req_avg = await axios.get(`/${year}/avg/`)
-    const playoff_req = await axios.get(`/${year}/${team}/1/`)
+    const req = await axios.get(`${baseURL}/${year}/${team}/0/`)
+    const req_avg = await axios.get(`${baseURL}/${year}/avg/`)
+    const playoff_req = await axios.get(`${baseURL}/${year}/${team}/1/`)
     const data = await req.data
     data["avgs"] = req_avg.data
     data["playoff_prob"] = playoff_req.data
@@ -35,6 +37,9 @@ function App() {
     container: 6,
     item: 3
   }
+
+
+
   return (
     <div style={{
       "background-color": theme.bodyColor
