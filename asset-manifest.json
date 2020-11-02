@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/nba_clustering/static/css/main.ab7136cd.chunk.css",
+    "main.js": "/nba_clustering/static/js/main.d7becbad.chunk.js",
+    "main.js.map": "/nba_clustering/static/js/main.d7becbad.chunk.js.map",
+    "runtime-main.js": "/nba_clustering/static/js/runtime-main.d53dcd2d.js",
+    "runtime-main.js.map": "/nba_clustering/static/js/runtime-main.d53dcd2d.js.map",
+    "static/js/2.71d608c8.chunk.js": "/nba_clustering/static/js/2.71d608c8.chunk.js",
+    "static/js/2.71d608c8.chunk.js.map": "/nba_clustering/static/js/2.71d608c8.chunk.js.map",
+    "static/js/3.155af152.chunk.js": "/nba_clustering/static/js/3.155af152.chunk.js",
+    "static/js/3.155af152.chunk.js.map": "/nba_clustering/static/js/3.155af152.chunk.js.map",
+    "index.html": "/nba_clustering/index.html",
+    "static/css/main.ab7136cd.chunk.css.map": "/nba_clustering/static/css/main.ab7136cd.chunk.css.map",
+    "static/js/2.71d608c8.chunk.js.LICENSE.txt": "/nba_clustering/static/js/2.71d608c8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d53dcd2d.js",
+    "static/js/2.71d608c8.chunk.js",
+    "static/css/main.ab7136cd.chunk.css",
+    "static/js/main.d7becbad.chunk.js"
+  ]
+}
